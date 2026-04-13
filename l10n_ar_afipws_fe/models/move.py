@@ -780,7 +780,13 @@ print "Observaciones:", wscdc.Obs
                         invoice_date,
                     )
             # Notas de debito
-           
+            if inv.l10n_latam_document_type_id.code in ['2','7','12','3','8','13'] and not CbteAsoc:
+                year = date.today().year
+                month = date.today().month
+                day = date.today().day
+                fecha_desde = str(year) + str(month).zfill(2) + '01'
+                fecha_hasta = str(year) + str(month).zfill(2) + str(day).zfill(2)
+                ws.AgregarPeriodoComprobantesAsociados(fecha_desde, fecha_hasta)
 
 
             # analize line items - invoice detail
