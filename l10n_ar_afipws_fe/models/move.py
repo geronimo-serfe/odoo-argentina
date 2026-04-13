@@ -786,8 +786,7 @@ print "Observaciones:", wscdc.Obs
                 day = date.today().day
                 fecha_desde = str(year) + str(month).zfill(2) + '01'
                 fecha_hasta = str(year) + str(month).zfill(2) + str(day).zfill(2)
-                ws.AgregarCmpAsoc(fecha_desde,fecha_hasta)
-
+                ws.AgregarPeriodoComprobantesAsociados(fecha_desde, fecha_hasta)
 
 
             # analize line items - invoice detail
